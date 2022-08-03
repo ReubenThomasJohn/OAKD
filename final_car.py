@@ -108,13 +108,13 @@ class VideoStream(object):
             pass
 
 if __name__ == '__main__':
-    video_stream_widget = VideoStream()
+    video_stream = VideoStream()
     while True:
         try:
-            video_stream_widget.show_frame()
-            video_stream_widget.write_frame()
-            video_stream_widget.break_video()
-            video_stream_widget.reset_video_write()
+            video_stream.show_frame()
+            video_stream.write_frame()
+            video_stream.break_video()
+            video_stream.reset_video_write()
         except AttributeError:
             pass
     

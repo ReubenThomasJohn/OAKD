@@ -1,4 +1,3 @@
-from inspect import Attribute
 from threading import Thread
 import cv2, time, numpy as np
 import time
