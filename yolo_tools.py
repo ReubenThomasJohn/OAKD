@@ -7,6 +7,14 @@ configs = {'INPUT_WIDTH':640,
         'SCORE_THRESHOLD':.5,
         'NMS_THRESHOLD':.3}
 
+classesFile = "./Tracking_DeepSORT/data/labels/coco.names"
+classes = None
+# A handy way to read all the classes from a file, without needed to hardcode each one
+with open(classesFile, 'rt') as f:
+    classes = f.read().rstrip('\n').split('\n')
+
+print("Number of Classes: ", len(classes))
+
 def post_process(outputs, image):
     '''
     One forward pass gives us an output as an array, that has a shape=(25200, no.of classes). That is, for each image,
