@@ -25,9 +25,9 @@
 
 #   # You can now decode the output of your NN
 
-from 
+from convert2onnx.tool.darknet2onnx import transform_to_onnx
 
 cfgfile = '/home/reuben/Projects/pothole-detection/learnopencv/Pothole-Detection-using-YOLOv4-and-Darknet/jupyter_notebook/darknet/cfg/tiny-yolo.cfg'
 weightfile = '/home/reuben/Projects/OAKD/backup_yolov4_tiny/yolov4-tiny-pothole_final.weights'
-WEIGHTS = Darknet(cfgfile)
-WEIGHTS.load_weights(weightfile)
+
+transform_to_onnx(cfgfile, weightfile, batch_size=1, onnx_file_name='yolov4-tiny.onnx')
